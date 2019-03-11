@@ -1,0 +1,22 @@
+1. Install AWS-Cli In Your Local Machine.
+pip install aws-cli
+2. For Upgarde the AWS-Cli Use This Commend.
+pip --upgrade aws-cli
+3. For More information Follow the below Link
+https://github.com/aws/aws-cli
+4. Add Your Key-store value with-out Encryption.
+aws ssm put-parameter --name Linux-AMI --valu kasi --type String
+5. Add Your Key-store value with Encryption Formate.
+aws ssm put-parameter --name myrds --value Reddy@123 --type SecureString
+6. Check whether it's Encrypted or not.
+aws ssm put-parameter --name myrds
+7. How to Decyprte the your Key-store Value.
+aws ssm get-parameter --name myrds --with-decryption
+8. How to create the hierarchical structure with AWS key-store.
+aws ssm put-parameter --name /myDBs/Oracle/Proud-instance1 --value TypeYourPassword --type SecureString
+9. Add the Couple of hierarchical structures.
+aws ssm put-parameter --name /myDBs/Mysql/Proud-instance1 --value TypeYourPassword --type SecureString
+10. How to see the hierarchical structure Encryption password.
+aws ssm get-parameter --name /myDBs/Mysql/
+11. How to See the Entire the hierarchical structure Encryption password with regrasive.
+aws ssm get-parameters-by-path --name /myDBs --recursive
